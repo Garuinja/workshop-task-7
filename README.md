@@ -1,23 +1,10 @@
-# workshop-task-0
-the URL for workshop 0 is https://ellap4n.github.io/workshop-task-0/
-## initial idea
-For workshop 0 I was intrigued by the mouse tracking conditional function, so I decided just to play around with this and some simple shapes in a fun way. 
+Link - https://garuinja.github.io/workshop-task-7/
 
-### Shapes
-I decided to draw a cake - and have a slice cutout using both the arc and triangle functions which were required in the workshop. 
-I found the functions for these shapes in the p5 reference page, and the slice angles were calculated using simple radian calculations. 
+### Brief Account of Experimentation
+- I intended to go with using the random walk system but I ended up with a random particle system because walk systems have the background to be in the setup function and particle systems have the background in the draw function. I should also say that I forked Ella Pan's workshop task 0 code which already has the background in the draw function and moving it to the setup function affects the appearance of other elements in the code. So in the end I modified the the code so that whenever the mouse hovered over the the red, blue or yellow circles not only would the circles on the pie would appear but so would the particles.
 
-I then added the topping circles - this could've probably been spaced out using a loop or something but I just manually spaced them roughly evenly. 
+### Problem Solving
+- When applying the walk system into the Ella's code it wasn't working for whatever reason until I realised that the for loop in the draw function had `balls.move();` instead of `balls[x].move();`
 
-### Conditionals
-Two conditionals I wanted to implement were - 
-1 - different toppings
-2 - the topping would only appear if you hovered over a option, otherwise the cake will just be icing. 
-
-I first created a IF loop for the Y position using the logical AND operator '&&' as these were the same for all three toppings, and then individual x cooridinates changing the stroke colour. 
-The topping circle function was placed outside of the individual x cooridinates but within the outer IF loop. 
-
-### Problem 
-However, when run the toppings would appear if I went anywherer within that y coordinate strip, in the last stroke colour because I didnt restrict the toppings from appearing for the x coordinates. So I went back and added more x coordinate restrictions using && for the boundaries and logical OR '||' for each possibility to the outer conditional. 
-
-I could've also just copied the circle function into the inner loops instead but decided to add the condition overall in case of any changes I wanted to make to the circle positions. 
+### Future Development
+- I would like to find a way to also include the walk system so then the walk system would be visible and then the mouse hovering could reveal the particle system.
